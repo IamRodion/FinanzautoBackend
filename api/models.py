@@ -2,7 +2,6 @@ from django.db import models
 import uuid
 
 def object_id():
-    # Cohesiona con el estilo de IDs solicitados (opc. real: usar bson.ObjectId)
     return uuid.uuid4().hex[:24]  # Genera 24 caracteres hexadecimales como Mongo
 
 class User(models.Model):
@@ -31,6 +30,7 @@ class User(models.Model):
     dateOfBirth = models.DateTimeField()
     phone = models.CharField(max_length=50)
     picture = models.URLField(blank=True, null=True)
+    document = models.CharField(blank=True, null=True)
     location = models.JSONField(default=dict, blank=True, null=True)
     registerDate = models.DateTimeField(auto_now_add=True)
     updatedDate = models.DateTimeField(auto_now=True)
