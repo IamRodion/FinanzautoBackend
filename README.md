@@ -15,7 +15,7 @@ Backend sencillo en Django + DRF para exponer una API REST de gestión de usuari
 ## Estructura del proyecto
 
 - `core/` configuración del proyecto Django (settings, urls, wsgi).
-- `api/` app principal con modelos, serializers y (ver api/urls.py y views.py si están presentes).
+- `api/` app principal con modelos, serializers, urls y views.
 - `manage.py` utilidades de Django.
 
 Rutas principales registradas:
@@ -44,7 +44,7 @@ Definido en `api/models.py`.
 Serializers:
 
 - `UserListSerializer`: id, title, firstName, lastName, picture.
-- `UserDetailSerializer`: todos los campos expuestos para detalle/creación/edición (con `location` opcional).
+- `UserDetailSerializer`: todos los campos expuestos para detalle/creación/edición.
 
 ## Requisitos previos
 
@@ -87,7 +87,7 @@ Por defecto usa SQLite (archivo `db.sqlite3` en la raíz), configurado en `core/
 
 Aplicar migraciones:
 
-- python manage.py migrate
+- python manage.py makemigrations && python manage.py migrate
 
 Crear superusuario (opcional, para admin):
 
@@ -96,7 +96,7 @@ Crear superusuario (opcional, para admin):
 ## Ejecución en desarrollo
 
 - python manage.py runserver
-- Abre http://127.0.0.1:8000/
+- Abre http://127.0.0.1:8000/ en el navegador
 
 Rutas útiles:
 
